@@ -1,0 +1,9 @@
+# to run a code, python3 main.py
+
+# to run this into gradio, uv run gradio deploy
+
+
+## To push to Github
+# git add main.py
+# git commit -m "Update history loop and model name"
+# git push origin main
