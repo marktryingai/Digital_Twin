@@ -1,3 +1,4 @@
+import os
 from dotenv import load_dotenv
 from openai import OpenAI
 from pypdf import PdfReader
@@ -60,4 +61,12 @@ def chat(message, history):
     response = openai.chat.completions.create(model="gpt-4o-mini", messages=messages)
     return response.choices[0].message.content
 
-gr.ChatInterface(chat).launch(server_name="0.0.0.0", inbrowser=True)
+# Fetch authentication credentials from environment variables (safe for GitHub/Render)
+app_user = os.getenv("APP_USER", "admin")
+app_pass = os.getenv("APP_PASS", "password123")
+
+gr.ChatInterface(chat).launch(
+    server_name="0.0.0.0", 
+    inbrowser=True, 
+    auth=(app_user, app_pass)
+)
