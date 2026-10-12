@@ -4,6 +4,6 @@
 
 
 ## To push to Github
-# git add main.py
-# git commit -m "Update history loop and model name"
-# git push origin main
+ git add main.py
+ git commit -m "Update history loop and model name"
+ git push origin main
